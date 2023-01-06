@@ -1,0 +1,79 @@
+@use "reset";
+@use "ds" as *;
+@use "mixins" as *;
+
+@font-face {
+	font-family: 'inter';
+	src: url("../fonts/inter-regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'inter';
+	src: url("../fonts/inter-bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+}
+
+html,
+body {
+	font: 1rem/1.5 Inter, sans-serif;
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(90deg, color(sky-100) 0%, color(white) 100%);
+	display: grid;
+	padding: 1rem;
+}
+
+#root {
+	place-self: center;
+}
+
+.account-form {
+	background: color(white);
+	border-radius: 0.5rem;
+	color: colors(stone-300);
+	box-shadow: 0 0 0 1px rgb(0 0 0 / 8%),
+							0 2px 4px rgb(0 0 0 / 6%),
+							0 12px 24px rgb(0 0 0 / 6%);
+	max-width: 40rem;
+	padding: 3rem 2rem;
+
+
+	label {
+		display: block;
+		font-size: 0.875rem;
+	}
+
+	input {
+		font-size: 1.125rem;
+		padding: spacing(2);
+	}
+
+	input[type=text], input[type=password] {
+		margin: 0 0 spacing(4);
+		width: 16rem;
+	}
+
+	::placeholder {
+		color: color(stone-300);
+	}
+
+	input[type=submit] {
+		padding: spacing(2);
+	}
+
+	p {
+		margin: 0 0 1rem;
+		width: 16rem;
+		&.success {
+			color: color(green-700);
+		}
+		&.failure {
+			color: color(rose-700);
+		}
+	}
+}
